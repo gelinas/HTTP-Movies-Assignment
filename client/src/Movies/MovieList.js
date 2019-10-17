@@ -21,7 +21,9 @@ export default class MovieList extends Component {
     return (
       <div className="movie-list">
         {this.state.movies.map(movie => (
-          <MovieDetails key={movie.id} movie={movie} />
+          <div onClick={() => this.props.history.push(`/movies/${movie.id}`)}>
+            <MovieDetails key={movie.id} movie={movie} />
+          </div>
         ))}
       </div>
     );
@@ -30,8 +32,6 @@ export default class MovieList extends Component {
 
 function MovieDetails({ movie }) {
   return (
-    <Link to={`/movies/${movie.id}`}>
       <MovieCard movie={movie} />
-    </Link>
   );
 }
