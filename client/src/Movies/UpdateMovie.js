@@ -64,7 +64,7 @@ export default class Movie extends React.Component {
         }
         return(
             <div className="update-wrapper">
-                <MovieForm movie={this.state.movie} submitForm={this.editMovie} />
+                <MovieForm movie={this.state.movie} submitForm={this.editMovie} type={"Edit Movie"} />
             </div>
         );
     } 

@@ -1,12 +1,11 @@
 import React from "react";
-import uuid from 'uuid';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 export default class Movie extends React.Component {
     constructor(props) {
       super(props);
       this.emptyMovie = { 
-          id: uuid.v4(), 
+          id: "",
           title: "", 
           director: "", 
           metascore: "", 
@@ -84,7 +83,7 @@ export default class Movie extends React.Component {
                                 type="submit" 
                                 className="primary-button"
                                 disabled={isSubmitting}>
-                            {isSubmitting ? "Please wait..." : "Edit Movie"}
+                            {isSubmitting ? "Please wait..." : this.props.type}
                             </button>
                         </div>
                     </Form>
